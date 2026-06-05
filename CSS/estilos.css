@@ -1,0 +1,667 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL Y VARIABLES (Estilo Industrial)
+   ========================================================================== */
+:root {
+    --amarillo-obra: #f39c12;    /* Amarillo reflectante de construcción */
+    --amarillo-hover: #e67e22;   /* Tono más oscuro para interacciones */
+    --gris-oscuro: #1e272e;      /* Gris asfalto para textos y fondos pesados */
+    --gris-claro: #f4f6f7;       /* Fondo limpio para secciones secundarias */
+    --blanco: #ffffff;
+    --texto-oscuro: #2c3e50;
+    --texto-mutado: #7f8c8d;
+    --verde-disponible: #2ecc71; /* Color de éxito para stock */
+    --rojo-reservado: #e74c3c;    /* Color de alerta para reservado */
+    --azul-proximamente: #3498db; /* Color informativo */
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    background-color: var(--blanco);
+}
+
+h1, h2, h3 {
+    color: var(--gris-oscuro);
+    font-weight: 700;
+}
+
+section {
+    padding: 80px 20px; /* Espaciado premium entre secciones */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subtitulo-seccion {
+    text-align: center;
+    color: var(--texto-mutado);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    position: relative;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Detalle visual debajo de cada título principal */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--amarillo-obra);
+    margin: 15px auto 0 auto;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y MENÚ DE NAVEGACIÓN (Fijo arriba)
+   ========================================================================== */
+header {
+    background-color: var(--gris-oscuro);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+header .logo {
+    color: var(--blanco);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+header .logo strong {
+    color: var(--amarillo-obra);
+}
+
+header nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--amarillo-obra);
+}
+
+header nav .btn-contacto {
+    background-color: var(--amarillo-obra);
+    color: var(--gris-oscuro);
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header nav .btn-contacto:hover {
+    background-color: var(--amarillo-hover);
+    color: var(--blanco);
+}
+
+/* Compensar el espacio del menú fijo para el resto de la página */
+main {
+    margin-top: 80px;
+}
+
+/* ==========================================================================
+   3. BANNER PRINCIPAL (Hero Section)
+   ========================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: calc(100vh - 80px);
+}
+
+.hero-contenido {
+    flex: 1;
+}
+
+.hero-contenido h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-contenido p {
+    font-size: 1.2rem;
+    color: var(--texto-mutado);
+    margin-bottom: 35px;
+}
+
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Estilos de Botones */
+.btn-primario, .btn-secundario, .btn-whatsapp, .btn-enviar-formulario, .btn-reserva-digital, .btn-descargar-pdf {
+    display: inline-block;
+    padding: 14px 28px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: transform 0.2s, background-color 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primario {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+}
+
+.btn-primario:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    background-color: var(--amarillo-obra);
+    color: var(--gris-oscuro);
+}
+
+.btn-secundario:hover {
+    background-color: var(--amarillo-hover);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: var(--blanco);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebd58;
+    transform: translateY(-2px);
+}
+
+.hero-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-bottom: 5px solid var(--amarillo-obra); /* Detalle de construcción */
+}
+
+/* ==========================================================================
+   4. SECCIÓN ¿QUIÉNES SOMOS? Y PILARES
+   ========================================================================== */
+.nosotros-seccion {
+    background-color: var(--blanco);
+}
+
+.descripcion-empresa {
+    text-align: center;
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    color: var(--texto-oscuro);
+}
+
+.pilares-empresa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1-fr));
+    gap: 30px;
+}
+
+.pilar {
+    background-color: var(--gris-claro);
+    padding: 30px;
+    border-radius: 6px;
+    border-left: 4px solid var(--amarillo-obra);
+}
+
+.pilar h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.pilar ul {
+    list-style: none;
+}
+
+.pilar ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.pilar ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--amarillo-obra);
+}
+
+/* ==========================================================================
+   5. SECCIÓN SERVICIOS (Tarjetas)
+   ========================================================================== */
+.servicios-seccion {
+    background-color: var(--gris-claro);
+    max-width: 100%;
+}
+
+.servicios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio-tarjeta {
+    background-color: var(--blanco);
+    padding: 35px 25px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servicio-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.icono-servicio {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.servicio-tarjeta h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   6. CATÁLOGO (Tabla de Maquinaria Profesional)
+   ========================================================================== */
+.tabla-contenedor {
+    overflow-x: auto; /* Permite scroll horizontal si la pantalla es muy chica */
+    background-color: var(--blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.tabla-equipos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-equipos th, .tabla-equipos td {
+    padding: 18px 25px;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.tabla-equipos th {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.tabla-equipos tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+/* Etiquetas dinámicas de disponibilidad */
+.estado {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.estado.disponible {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: var(--verde-disponible);
+}
+
+.estado.reservado {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: var(--rojo-reservado);
+}
+
+.estado.proximamente {
+    background-color: rgba(52, 152, 219, 0.15);
+    color: var(--azul-proximamente);
+}
+
+/* ==========================================================================
+   7. SECCIÓN INNOVACIÓN (Diferenciadores)
+   ========================================================================== */
+.innovacion-seccion {
+    background-color: var(--blanco);
+}
+
+.innovacion-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.innovacion-tarjeta {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    padding: 40px 30px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.innovacion-tarjeta h3 {
+    color: var(--amarillo-obra);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.innovacion-tarjeta p {
+    color: #b3bdc6;
+    font-size: 0.95rem;
+}
+
+/* Línea estética superior en la tarjeta */
+.innovacion-tarjeta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--amarillo-obra);
+}
+
+/* ==========================================================================
+   8. FORMULARIO DE COTIZACIÓN ONLINE
+   ========================================================================== */
+.cotizacion-seccion {
+    background-color: var(--gris-claro);
+    max-width: 100%;
+}
+
+.formulario-contenedor {
+    background-color: var(--blanco);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.grupo-form {
+    margin-bottom: 20px;
+}
+
+.grupo-form-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grupo-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--gris-oscuro);
+}
+
+.grupo-form input, .grupo-form select, .grupo-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccd1d1;
+    border-radius: 4px;
+    font-family: var(--fuente-principal);
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.grupo-form input:focus, .grupo-form select:focus, .grupo-form textarea:focus {
+    outline: none;
+    border-color: var(--amarillo-obra);
+}
+
+.btn-enviar-formulario {
+    background-color: var(--amarillo-obra);
+    color: var(--gris-oscuro);
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.btn-enviar-formulario:hover {
+    background-color: var(--amarillo-hover);
+    color: var(--blanco);
+}
+
+/* ==========================================================================
+   9. PROYECTOS FUTUROS Y BLOG TÉCNICO
+   ========================================================================== */
+.proyectos-contenedor, .blog-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.proyecto-tarjeta, .blog-tarjeta {
+    background-color: var(--gris-claro);
+    padding: 30px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.etiqueta-proyecto {
+    background-color: var(--gris-oscuro);
+    color: var(--amarillo-obra);
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-start;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.proyecto-tarjeta h3, .blog-tarjeta h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.proyecto-tarjeta p, .blog-tarjeta p {
+    color: var(--texto-mutado);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.leer-mas {
+    color: var(--amarillo-obra);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.leer-mas:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   10. SIMULADOR DE RESERVAS (Gancho de impacto)
+   ========================================================================== */
+.reserva-seccion {
+    background-color: var(--blanco);
+}
+
+.reserva-caja {
+    background-color: #ebedef;
+    padding: 50px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px dashed #bdc3c7;
+}
+
+.reserva-caja h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.reserva-caja h2::after {
+    display: none; /* Eliminar la línea genérica para esta caja */
+}
+
+.reserva-caja p {
+    margin-bottom: 25px;
+    color: var(--texto-oscuro);
+}
+
+.btn-reserva-digital {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+}
+
+.btn-reserva-digital:hover {
+    background-color: #000;
+}
+
+.nota-simulacion {
+    font-size: 0.8rem;
+    color: var(--texto-mutated);
+    margin-top: 15px !important;
+}
+
+/* ==========================================================================
+   11. PIE DE PÁGINA (Footer Industrial)
+   ========================================================================== */
+footer {
+    background-color: var(--gris-oscuro);
+    color: #a6b4c1;
+    padding: 60px 20px 20px 20px;
+    margin-top: 40px;
+}
+
+.footer-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #2c3e50;
+}
+
+.footer-columna h3 {
+    color: var(--blanco);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-columna p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.btn-descargar-pdf {
+    background-color: transparent;
+    color: var(--amarillo-obra);
+    border: 2px solid var(--amarillo-obra);
+    text-align: center;
+    width: 100%;
+}
+
+.btn-descargar-pdf:hover {
+    background-color: var(--amarillo-obra);
+    color: var(--gris-oscuro);
+}
+
+.footer-derechos {
+    text-align: center;
+    font-size: 0.8rem;
+    padding-top: 20px;
+    color: #7f8c8d;
+}
+
+/* ==========================================================================
+   12. DISEÑO RESPONSIVO (Ajustes para Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header nav a {
+        margin: 0 10px;
+        font-size: 0.85rem;
+    }
+    
+    main {
+        margin-top: 120px;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .hero-contenido h1 {
+        font-size: 2.3rem;
+    }
+    
+    .hero-botones {
+        justify-content: center;
+    }
+    
+    .grupo-form-duo {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    section {
+        padding: 50px 15px;
+    }
+}
