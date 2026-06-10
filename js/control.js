@@ -1,36 +1,57 @@
 /* ==========================================================================
-   NICCOGAR RENTAL S.A.C. - Lógica de Control e Interactividad
+   NICCOGAR RENTAL S.A.C. - Lógica Comercial y de Costos (EPIC)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. CONTROL DEL FORMULARIO DE COTIZACIÓN ONLINE
     const formulario = document.querySelector('.form-cotizar');
     
+    // Matriz de Costos Unitarios basados en los datos de inversión del proyecto
+    const costosMaquinaria = {
+        'plancha': { nombre: 'Compactadora tipo plancha', precio: 3000 },
+        'canguro': { nombre: 'Compactadora tipo canguro', precio: 3500 },
+        'mezcladora': { nombre: 'Mezcladora de concreto', precio: 2000 },
+        'vibrador': { nombre: 'Vibrador para concreto', precio: 600 },
+        'rotomartillo': { nombre: 'Rotomartillo / martillo demoledor', precio: 500 },
+        'generador': { nombre: 'Generador eléctrico', precio: 2500 }
+    };
+
     if (formulario) {
         formulario.addEventListener('submit', (e) => {
-            e.preventDefault(); // Evita que la página se recargue por defecto
+            e.preventDefault();
             
-            // Captura de datos ingresados por el usuario
             const nombre = document.getElementById('nombre').value;
-            const empresa = document.getElementById('empresa').value || "Particular";
+            const empresa = document.getElementById('empresa').value || "Particular / Contratista EPIC";
             const telefono = document.getElementById('telefono').value;
-            const equipoSelect = document.getElementById('equipo');
-            const equipoTexto = equipoSelect.options[equipoSelect.selectedIndex].text;
+            const equipoSelect = document.getElementById('equipo').value; // Asegúrate de que los values en el HTML coincidan con las llaves ('plancha', 'canguro', etc.)
+            const cantidad = parseInt(document.getElementById('cantidad').value) || 1;
             const fecha = document.getElementById('fecha').value;
             
-            // Simulación de procesamiento de datos en el servidor logístico de la empresa
-            alert(`🏗️ ¡SOLICITUD DE COTIZACIÓN RECIBIDA EN SISTEMA!\n\n` +
-                  `Estimado(a): ${nombre}\n` +
-                  `Entidad: ${empresa}\n` +
-                  `Equipo solicitado: ${equipoTexto}\n` +
-                  `Fecha requerida: ${fecha}\n\n` +
-                  `✅ Nuestro asesor comercial en Moquegua se comunicará al número ${telefono} en menos de 30 minutos con la propuesta económica formal. ¡Gracias por confiar en NICCOGAR RENTAL!`);
+            // Validación y Cálculo Financiero
+            const equipoData = costosMaquinaria[equipoSelect];
             
-            formulario.reset(); // Limpia los campos del formulario tras el éxito
+            if (equipoData) {
+                const costoUnitario = equipoData.precio;
+                const costoTotal = costoUnitario * cantidad;
+                
+                // Alerta Interactiva con Desglose de Presupuesto para Ingeniería Civil
+                alert(`🏗️ ¡SIMULACIÓN DE PRESUPUESTO - NICCOGAR RENTAL S.A.C.!\n\n` +
+                      `👤 Representante: ${nombre}\n` +
+                      `🏢 Entidad/Obra: ${empresa}\n` +
+                      `📅 Fecha de Inicio: ${fecha}\n` +
+                      `--------------------------------------------------\n` +
+                      `🛠️ Equipo: ${equipoData.nombre}\n` +
+                      `🔢 Cantidad Solicitada: ${cantidad} und.\n` +
+                      `💰 Costo Referencial Unitario: S/. ${costoUnitario.toLocaleString('en-US')}.00\n` +
+                      `📊 COSTO TOTAL DE INVERSIÓN: S/. ${costoTotal.toLocaleString('en-US')}.00\n` +
+                      `--------------------------------------------------\n` +
+                      `✅ Propuesta comercial registrada. Un asesor técnico de la EPIC se comunicará al ${telefono} para coordinar los términos de la entrega en Moquegua.`);
+                
+                formulario.reset();
+            } else {
+                alert("⚠️ Por favor, selecciona un equipo válido de la flota disponible.");
+            }
         });
     }
 
-    // 2. LOG INTERACTIVO DE CONTROL EN CONSOLA (Para demostrar desarrollo técnico)
-    console.log("🚀 Sistema de Control de NICCOGAR RENTAL S.A.C. inicializado correctamente.");
-    console.log("📊 Monitoreando estados de disponibilidad de la flota en Moquegua...");
+    console.log("🚀 Módulo de costos y presupuestos NICCOGAR inicializado para la EPIC Moquegua.");
 });
