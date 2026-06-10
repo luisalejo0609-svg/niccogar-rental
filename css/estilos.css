@@ -848,3 +848,52 @@ main section img {
 .btn-alquilar:hover {
     background: #d35400; /* Oscurece al pasar el mouse */
 }
+
+/* ==========================================================================
+   AJUSTE DE BOTONES DOBLES EN EL CATÁLOGO
+   ========================================================================== */
+
+/* Cambiamos el footer para que maneje la distribución vertical si es necesario */
+.equipo-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Contenedor secundario para poner los dos botones uno al lado del otro */
+.equipo-botones-box {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Estilo del nuevo botón Ficha Técnica (Gris asfalto industrial) */
+.btn-ficha {
+    flex: 1; /* Hace que ambos botones tengan exactamente el mismo ancho */
+    text-align: center;
+    display: inline-block;
+    background: #1e272e; /* Color asfalto corporativo */
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+    border: 1px solid #1e272e;
+}
+
+.btn-ficha:hover {
+    background: #2c3e50; /* Aclara sutilmente al pasar el mouse */
+}
+
+/* Ajustamos el botón alquilar existente para que comparta el espacio simétricamente */
+.btn-alquilar {
+    flex: 1;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 13px;
+}
