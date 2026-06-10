@@ -700,3 +700,27 @@ footer {
 .hero-image-container img:hover {
     transform: scale(1.02); /* Efecto de zoom sutil interactivo */
 }
+/* ==========================================================================
+   FORZAR MARCO INDUSTRIAL DIRECTO A LA IMAGEN HERO
+   ========================================================================== */
+
+.hero-seccion img, 
+.hero-image-container img,
+main section img {
+    /* 1. Forzar tamaño perfecto sin deformar la maquinaria */
+    width: 100% !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+
+    /* 2. El Marco Técnico (Asfalto + Línea Amarilla Vial) */
+    border: 6px solid #1e272e !important; /* Borde grueso gris oscuro asfalto */
+    outline: 4px solid #f39c12 !important; /* Segunda línea exterior amarilla industrial */
+    border-radius: 8px !important; /* Esquinas de acabado técnico */
+    
+    /* 3. Sombra de relieve estructural */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4) !important;
+    
+    /* Separación extra para que no pegue con los bordes */
+    margin: 10px 0 !important;
+}
