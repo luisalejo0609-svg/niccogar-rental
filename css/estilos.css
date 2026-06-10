@@ -665,3 +665,38 @@ footer {
         padding: 50px 15px;
     }
 }
+
+/* ==========================================================================
+   Estilos Especiales para el Encuadre de la Imagen Hero (EPIC)
+   ========================================================================== */
+
+/* Contenedor para obligar a la imagen a ocupar el espacio correcto */
+.hero-image-container {
+    width: 100%;
+    max-width: 550px; /* Controla el ancho máximo para que no se deforme */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El cerebro del encuadre y el marco técnico */
+.hero-image-container img {
+    width: 100%;
+    height: 380px; /* Altura fija para cuadrar perfectamente con el texto al lado */
+    object-fit: cover; /* 🔥 ESTE ES EL TRUCO: Corta y rellena el espacio sin deformar la foto */
+    object-position: center; /* Centra el enfoque en la maquinaria */
+    
+    /* Diseño del Marco Corporativo */
+    border: 4px solid #1e272e; /* Borde grueso color asfalto */
+    border-radius: 12px; /* Esquinas suavizadas de ingeniería moderna */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 
+                0 0 0 4px #f39c12; /* Doble marco: Sombra real + línea exterior amarilla */
+    
+    transition: transform 0.3s ease;
+}
+
+/* Efecto interactivo al pasar el mouse (para la sustentación) */
+.hero-image-container img:hover {
+    transform: scale(1.02); /* Efecto de zoom sutil interactivo */
+}
