@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. CONFIGURACIÓN GENERAL Y VARIABLES (Estilo Industrial Premium)
+   1. CONFIGURACIÓN GENERAL Y VARIABLES (Estilo Industrial)
    ========================================================================== */
 :root {
     --amarillo-obra: #f39c12;    /* Amarillo reflectante de construcción */
@@ -13,10 +13,6 @@
     --rojo-reservado: #e74c3c;    /* Color de alerta para reservado */
     --azul-proximamente: #3498db; /* Color informativo */
     --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    /* Nuevas variables decorativas */
-    --grid-pattern: radial-gradient(circle, #e2e8f0 1px, transparent 1px);
-    --blueprint-line: rgba(243, 156, 18, 0.15);
 }
 
 * {
@@ -26,187 +22,715 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Desplazamiento suave */
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
 }
 
 body {
     font-family: var(--fuente-principal);
     color: var(--texto-oscuro);
-    background-color: var(--blanco);
     line-height: 1.6;
-    overflow-x: hidden;
+    background-color: var(--blanco);
 }
 
-/* ==========================================================================
-   2. DETALLES DE FONDO INSPIRADOS EN INGENIERÍA (Mejora Solicitada)
-   ========================================================================== */
-
-/* Añade un sutil entramado de puntos geométricos a los fondos claros */
-.bg-ingenieria {
-    background-color: #ffffff;
-    background-image: var(--grid-pattern);
-    background-size: 24px 24px;
-    position: relative;
+h1, h2, h3 {
+    color: var(--gris-oscuro);
+    font-weight: 700;
 }
 
-/* Pequeños detalles de esquinas angulares que simulan planos técnicos o miras topográficas */
-.bg-ingenieria::before {
-    content: "";
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 30px;
-    height: 30px;
-    border-top: 2px solid var(--blueprint-line);
-    border-left: 2px solid var(--blueprint-line);
-    pointer-events: none;
-}
-
-.bg-ingenieria::after {
-    content: "";
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    border-bottom: 2px solid var(--blueprint-line);
-    border-right: 2px solid var(--blueprint-line);
-    pointer-events: none;
-}
-
-/* ==========================================================================
-   3. CABECERA Y MENÚ DE NAVEGACIÓN
-   ========================================================================== */
-.header-premium {
-    background-color: var(--gris-oscuro);
-    border-bottom: 3px solid var(--amarillo-obra);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.nav-container {
+section {
+    padding: 80px 20px; /* Espaciado premium entre secciones */
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.subtitulo-seccion {
+    text-align: center;
+    color: var(--texto-mutado);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    position: relative;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Detalle visual debajo de cada título principal */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--amarillo-obra);
+    margin: 15px auto 0 auto;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y MENÚ DE NAVEGACIÓN (Fijo arriba)
+   ========================================================================== */
+header {
+    background-color: var(--gris-oscuro);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 20px 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-.logo-brand {
+header .logo {
     color: var(--blanco);
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
 }
 
-.logo-brand span {
+header .logo strong {
     color: var(--amarillo-obra);
 }
 
-.nav-menu a {
+header nav a {
     color: var(--blanco);
     text-decoration: none;
     margin-left: 25px;
+    font-size: 0.95rem;
     font-weight: 600;
-    font-size: 15px;
-    transition: color 0.3s ease, border-bottom 0.2s ease;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
+    transition: color 0.3s;
 }
 
-.nav-menu a:hover {
+header nav a:hover {
     color: var(--amarillo-obra);
-    border-bottom: 2px solid var(--amarillo-obra);
 }
 
-.nav-menu a.btn-contacto-nav {
+header nav .btn-contacto {
     background-color: var(--amarillo-obra);
     color: var(--gris-oscuro);
     padding: 8px 18px;
     border-radius: 4px;
-    border-bottom: none;
+    transition: background-color 0.3s;
 }
 
-.nav-menu a.btn-contacto-nav:hover {
+header nav .btn-contacto:hover {
     background-color: var(--amarillo-hover);
     color: var(--blanco);
+}
+
+/* Compensar el espacio del menú fijo para el resto de la página */
+main {
+    margin-top: 80px;
+}
+
+/* ==========================================================================
+   3. BANNER PRINCIPAL (Hero Section)
+   ========================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: calc(100vh - 80px);
+}
+
+.hero-contenido {
+    flex: 1;
+}
+
+.hero-contenido h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-contenido p {
+    font-size: 1.2rem;
+    color: var(--texto-mutado);
+    margin-bottom: 35px;
+}
+
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Estilos de Botones */
+.btn-primario, .btn-secundario, .btn-whatsapp, .btn-enviar-formulario, .btn-reserva-digital, .btn-descargar-pdf {
+    display: inline-block;
+    padding: 14px 28px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: transform 0.2s, background-color 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primario {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+}
+
+.btn-primario:hover {
+    background-color: #000;
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   4. SECCIÓN PRINCIPAL (HERO)
-   ========================================================================== */
-.hero-seccion {
-    background: linear-gradient(rgba(30, 39, 46, 0.85), rgba(30, 39, 46, 0.95)), 
-                url('../assets/img/textura-obra.jpg') center/cover no-repeat;
-    color: var(--blanco);
-    padding: 100px 20px;
-    text-align: center;
-    position: relative;
-    border-bottom: 5px solid var(--amarillo-obra);
-}
-
-.hero-content h1 {
-    font-size: 42px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    letter-spacing: -0.5px;
-}
-
-.hero-content p {
-    font-size: 18px;
-    color: #ced6e0;
-    max-width: 700px;
-    margin: 0 auto 35px auto;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-principal, .btn-secundario {
-    padding: 14px 28px;
-    font-weight: 700;
-    font-size: 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.btn-principal {
+.btn-secundario {
     background-color: var(--amarillo-obra);
     color: var(--gris-oscuro);
-    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
-}
-
-.btn-principal:hover {
-    background-color: var(--amarillo-hover);
-    transform: translateY(-3px);
-}
-
-.btn-secundario {
-    background-color: transparent;
-    color: var(--blanco);
-    border: 2px solid var(--blanco);
 }
 
 .btn-secundario:hover {
-    background-color: var(--blanco);
-    color: var(--gris-oscuro);
-    transform: translateY(-3px);
+    background-color: var(--amarillo-hover);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: var(--blanco);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebd58;
+    transform: translateY(-2px);
+}
+
+.hero-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-bottom: 5px solid var(--amarillo-obra); /* Detalle de construcción */
 }
 
 /* ==========================================================================
-   5. SECCIÓN: CATÁLOGO DE MAQUINARIA (Grid Adaptable Premium)
+   4. SECCIÓN ¿QUIÉNES SOMOS? Y PILARES
+   ========================================================================== */
+.nosotros-seccion {
+    background-color: var(--blanco);
+}
+
+.descripcion-empresa {
+    text-align: center;
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    color: var(--texto-oscuro);
+}
+
+.pilares-empresa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1-fr));
+    gap: 30px;
+}
+
+.pilar {
+    background-color: var(--gris-claro);
+    padding: 30px;
+    border-radius: 6px;
+    border-left: 4px solid var(--amarillo-obra);
+}
+
+.pilar h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.pilar ul {
+    list-style: none;
+}
+
+.pilar ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.pilar ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--amarillo-obra);
+}
+
+/* ==========================================================================
+   5. SECCIÓN SERVICIOS (Tarjetas)
+   ========================================================================== */
+.servicios-seccion {
+    background-color: var(--gris-claro);
+    max-width: 100%;
+}
+
+.servicios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio-tarjeta {
+    background-color: var(--blanco);
+    padding: 35px 25px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servicio-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.icono-servicio {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.servicio-tarjeta h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   6. CATÁLOGO (Tabla de Maquinaria Profesional)
+   ========================================================================== */
+.tabla-contenedor {
+    overflow-x: auto; /* Permite scroll horizontal si la pantalla es muy chica */
+    background-color: var(--blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.tabla-equipos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-equipos th, .tabla-equipos td {
+    padding: 18px 25px;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.tabla-equipos th {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.tabla-equipos tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+/* Etiquetas dinámicas de disponibilidad */
+.estado {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.estado.disponible {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: var(--verde-disponible);
+}
+
+.estado.reservado {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: var(--rojo-reservado);
+}
+
+.estado.proximamente {
+    background-color: rgba(52, 152, 219, 0.15);
+    color: var(--azul-proximamente);
+}
+
+/* ==========================================================================
+   7. SECCIÓN INNOVACIÓN (Diferenciadores)
+   ========================================================================== */
+.innovacion-seccion {
+    background-color: var(--blanco);
+}
+
+.innovacion-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.innovacion-tarjeta {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    padding: 40px 30px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.innovacion-tarjeta h3 {
+    color: var(--amarillo-obra);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.innovacion-tarjeta p {
+    color: #b3bdc6;
+    font-size: 0.95rem;
+}
+
+/* Línea estética superior en la tarjeta */
+.innovacion-tarjeta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--amarillo-obra);
+}
+
+/* ==========================================================================
+   8. FORMULARIO DE COTIZACIÓN ONLINE
+   ========================================================================== */
+.cotizacion-seccion {
+    background-color: var(--gris-claro);
+    max-width: 100%;
+}
+
+.formulario-contenedor {
+    background-color: var(--blanco);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.grupo-form {
+    margin-bottom: 20px;
+}
+
+.grupo-form-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grupo-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--gris-oscuro);
+}
+
+.grupo-form input, .grupo-form select, .grupo-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccd1d1;
+    border-radius: 4px;
+    font-family: var(--fuente-principal);
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.grupo-form input:focus, .grupo-form select:focus, .grupo-form textarea:focus {
+    outline: none;
+    border-color: var(--amarillo-obra);
+}
+
+.btn-enviar-formulario {
+    background-color: var(--amarillo-obra);
+    color: var(--gris-oscuro);
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+.btn-enviar-formulario:hover {
+    background-color: var(--amarillo-hover);
+    color: var(--blanco);
+}
+
+/* ==========================================================================
+   9. PROYECTOS FUTUROS Y BLOG TÉCNICO
+   ========================================================================== */
+.proyectos-contenedor, .blog-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.proyecto-tarjeta, .blog-tarjeta {
+    background-color: var(--gris-claro);
+    padding: 30px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.etiqueta-proyecto {
+    background-color: var(--gris-oscuro);
+    color: var(--amarillo-obra);
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-start;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.proyecto-tarjeta h3, .blog-tarjeta h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.proyecto-tarjeta p, .blog-tarjeta p {
+    color: var(--texto-mutado);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.leer-mas {
+    color: var(--amarillo-obra);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.leer-mas:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   10. SIMULADOR DE RESERVAS (Gancho de impacto)
+   ========================================================================== */
+.reserva-seccion {
+    background-color: var(--blanco);
+}
+
+.reserva-caja {
+    background-color: #ebedef;
+    padding: 50px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px dashed #bdc3c7;
+}
+
+.reserva-caja h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.reserva-caja h2::after {
+    display: none; /* Eliminar la línea genérica para esta caja */
+}
+
+.reserva-caja p {
+    margin-bottom: 25px;
+    color: var(--texto-oscuro);
+}
+
+.btn-reserva-digital {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+}
+
+.btn-reserva-digital:hover {
+    background-color: #000;
+}
+
+.nota-simulacion {
+    font-size: 0.8rem;
+    color: var(--texto-mutated);
+    margin-top: 15px !important;
+}
+
+/* ==========================================================================
+   11. PIE DE PÁGINA (Footer Industrial)
+   ========================================================================== */
+footer {
+    background-color: var(--gris-oscuro);
+    color: #a6b4c1;
+    padding: 60px 20px 20px 20px;
+    margin-top: 40px;
+}
+
+.footer-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #2c3e50;
+}
+
+.footer-columna h3 {
+    color: var(--blanco);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-columna p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.btn-descargar-pdf {
+    background-color: transparent;
+    color: var(--amarillo-obra);
+    border: 2px solid var(--amarillo-obra);
+    text-align: center;
+    width: 100%;
+}
+
+.btn-descargar-pdf:hover {
+    background-color: var(--amarillo-obra);
+    color: var(--gris-oscuro);
+}
+
+.footer-derechos {
+    text-align: center;
+    font-size: 0.8rem;
+    padding-top: 20px;
+    color: #7f8c8d;
+}
+
+/* ==========================================================================
+   12. DISEÑO RESPONSIVO (Ajustes para Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header nav a {
+        margin: 0 10px;
+        font-size: 0.85rem;
+    }
+    
+    main {
+        margin-top: 120px;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .hero-contenido h1 {
+        font-size: 2.3rem;
+    }
+    
+    .hero-botones {
+        justify-content: center;
+    }
+    
+    .grupo-form-duo {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    section {
+        padding: 50px 15px;
+    }
+}
+
+/* ==========================================================================
+   Estilos Especiales para el Encuadre de la Imagen Hero (EPIC)
+   ========================================================================== */
+
+/* Contenedor para obligar a la imagen a ocupar el espacio correcto */
+.hero-image-container {
+    width: 100%;
+    max-width: 550px; /* Controla el ancho máximo para que no se deforme */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El cerebro del encuadre y el marco técnico */
+.hero-image-container img {
+    width: 100%;
+    height: 380px; /* Altura fija para cuadrar perfectamente con el texto al lado */
+    object-fit: cover; /* 🔥 ESTE ES EL TRUCO: Corta y rellena el espacio sin deformar la foto */
+    object-position: center; /* Centra el enfoque en la maquinaria */
+    
+    /* Diseño del Marco Corporativo */
+    border: 4px solid #1e272e; /* Borde grueso color asfalto */
+    border-radius: 12px; /* Esquinas suavizadas de ingeniería moderna */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 
+                0 0 0 4px #f39c12; /* Doble marco: Sombra real + línea exterior amarilla */
+    
+    transition: transform 0.3s ease;
+}
+
+/* Efecto interactivo al pasar el mouse (para la sustentación) */
+.hero-image-container img:hover {
+    transform: scale(1.02); /* Efecto de zoom sutil interactivo */
+}
+/* ==========================================================================
+   FORZAR MARCO INDUSTRIAL DIRECTO A LA IMAGEN HERO
+   ========================================================================== */
+
+.hero-seccion img, 
+.hero-image-container img,
+main section img {
+    /* 1. Forzar tamaño perfecto sin deformar la maquinaria */
+    width: 100% !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+
+    /* 2. El Marco Técnico (Asfalto + Línea Amarilla Vial) */
+    border: 6px solid #1e272e !important; /* Borde grueso gris oscuro asfalto */
+    outline: 4px solid #f39c12 !important; /* Segunda línea exterior amarilla industrial */
+    border-radius: 8px !important; /* Esquinas de acabado técnico */
+    
+    /* 3. Sombra de relieve estructural */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4) !important;
+    
+    /* Separación extra para que no pegue con los bordes */
+    margin: 10px 0 !important;
+}
+
+/* ==========================================================================
+   DISEÑO PREMIUM PARA EL CATÁLOGO DE EQUIPOS
    ========================================================================== */
 .catalogo-seccion {
-    padding: 80px 20px;
+    padding: 60px 20px;
+    background-color: #f8f9fa; /* Fondo gris claro industrial para hacer contraste */
 }
 
 .catalogo-container {
@@ -215,107 +739,83 @@ body {
 }
 
 .catalogo-titulo {
-    font-size: 34px;
-    color: var(--gris-oscuro);
+    font-size: 32px;
+    color: #1e272e;
     text-align: center;
     margin-bottom: 10px;
-    font-weight: 800;
-    position: relative;
+    font-weight: 700;
 }
 
 .catalogo-subtitulo {
     font-size: 16px;
-    color: var(--texto-mutado);
+    color: #57606f;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-/* Grilla Avanzada */
+/* Grilla adaptable: Muestra 3 columnas en PC, 2 en Tablet y 1 en Celular automáticamente */
 .equipos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-/* Tarjetas de Equipos Estilo Ficha de Activo */
+/* Tarjeta de cada Equipo */
 .equipo-card {
-    background: var(--blanco);
-    border-radius: 8px;
+    background: #ffffff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: 1px solid #e1e8ed;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    position: relative;
-}
-
-.equipo-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: transparent;
-    transition: background-color 0.3s;
 }
 
 .equipo-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(30, 39, 46, 0.12);
+    transform: translateY(-5px); /* Pequeña elevación interactiva */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.equipo-card:hover::before {
-    background-color: var(--amarillo-obra);
-}
-
-/* Caja de Imagen */
+/* Caja contenedora de la foto para centrarla elegantemente */
 .equipo-img-box {
     background: #ffffff;
-    height: 230px;
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
     border-bottom: 1px solid #f1f2f6;
-    background-image: radial-gradient(#f1f5f9 1px, transparent 1px);
-    background-size: 16px 16px;
 }
 
 .equipo-img-box img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.4s ease;
+    object-fit: contain; /* Mantiene la proporción original de la máquina sin recortar */
 }
 
-.equipo-card:hover .equipo-img-box img {
-    transform: scale(1.05); /* Sutil zoom dinámico al pasar el mouse */
-}
-
-/* Cuerpo informativo de la tarjeta */
+/* Información del Equipo */
 .equipo-info {
-    padding: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .equipo-info h3 {
-    font-size: 19px;
-    color: var(--gris-oscuro);
-    margin-bottom: 6px;
-    font-weight: 700;
+    font-size: 18px;
+    color: #1e272e;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .equipo-marca {
     font-size: 14px;
-    color: var(--texto-mutado);
-    margin-bottom: 24px;
+    color: #747d8c;
+    margin-bottom: 20px;
 }
 
-/* Footer de Tarjeta */
+/* Parte baja de la tarjeta */
 .equipo-footer {
     display: flex;
     justify-content: space-between;
@@ -325,190 +825,26 @@ body {
 
 .equipo-dispo {
     font-size: 12px;
-    color: var(--verde-disponible);
+    color: #2ed573; /* Verde indicador de stock activo */
     background: #e3fcef;
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
 }
 
+/* Botón de Cotización Directa por Item */
 .btn-alquilar {
     display: inline-block;
-    background: var(--gris-oscuro);
-    color: var(--blanco) !important;
+    background: #f39c12; /* Color corporativo naranja de NICCOGAR */
+    color: #ffffff !important;
     text-decoration: none;
-    padding: 8px 18px;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 5px;
     font-size: 14px;
-    font-weight: 700;
-    transition: all 0.2s ease;
-    border: 1px solid var(--gris-oscuro);
+    font-weight: 600;
+    transition: background 0.2s ease;
 }
 
 .btn-alquilar:hover {
-    background: var(--amarillo-obra);
-    color: var(--gris-oscuro) !important;
-    border-color: var(--amarillo-obra);
-}
-
-/* ==========================================================================
-   6. SECCIÓN: BLOG TÉCNICO INDUSTRIAL
-   ========================================================================== */
-.blog-seccion {
-    padding: 80px 20px;
-    background-color: #fafafa;
-    border-top: 1px solid #edf2f7;
-}
-
-.blog-contenedor {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.blog-tarjeta {
-    background: var(--blanco);
-    padding: 30px;
-    border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    border: 1px solid #e2e8f0;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-}
-
-.blog-tarjeta:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.blog-tarjeta h3 {
-    font-size: 20px;
-    color: var(--gris-oscuro);
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-.blog-tarjeta p {
-    color: #64748b;
-    font-size: 14.5px;
-    margin: 15px 0 25px 0;
-}
-
-.blog-link {
-    color: var(--amarillo-obra);
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    transition: color 0.2s;
-}
-
-.blog-link:hover {
-    color: var(--amarillo-hover);
-}
-
-/* ==========================================================================
-   7. SECCIÓN DE DESCARGA FINAL (Alineada al Mockup)
-   ========================================================================== */
-.seccion-descarga-final {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 40px 30px;
-    text-align: center;
-    background-color: var(--gris-claro);
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    border-left: 6px solid var(--amarillo-obra);
-    background-image: var(--grid-pattern);
-    background-size: 20px 20px;
-}
-
-/* ==========================================================================
-   8. TABLAS DE DATOS TÉCNICOS (Módulo de Control Financiero / Inversión)
-   ========================================================================== */
-.tabla-contenedor {
-    width: 100%;
-    overflow-x: auto;
-    margin: 30px 0;
-    border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #e2e8f0;
-}
-
-.tabla-equipos {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--blanco);
-    text-align: left;
-}
-
-.tabla-equipos th {
-    background-color: var(--gris-oscuro);
-    color: var(--blanco);
-    padding: 15px;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.tabla-equipos td {
-    padding: 15px;
-    border-bottom: 1px solid #e2e8f0;
-    font-size: 15px;
-    color: var(--texto-oscuro);
-}
-
-.tabla-equipos tr:nth-child(even) {
-    background-color: #f8fafc;
-}
-
-/* ==========================================================================
-   9. PIE DE PÁGINA (FOOTER)
-   ========================================================================== */
-.footer-industrial {
-    background-color: var(--gris-oscuro);
-    color: #a4b0be;
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 14px;
-    border-top: 4px solid var(--amarillo-obra);
-}
-
-.footer-industrial p {
-    margin-bottom: 10px;
-}
-
-/* ==========================================================================
-   10. RESPONSIVE DESIGN (Adaptabilidad Móvil)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .nav-menu a {
-        margin: 0 10px;
-        font-size: 14px;
-    }
-    
-    .hero-content h1 {
-        font-size: 30px;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
-        padding: 0 20px;
-    }
-    
-    .catalogo-titulo {
-        font-size: 28px;
-    }
+    background: #d35400; /* Oscurece al pasar el mouse */
 }
