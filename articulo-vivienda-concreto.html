@@ -3,28 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Equipos para Vaciado - NICCOGAR RENTAL</title>
-    <link rel="stylesheet" href="css/estilos.css?v=2">
+    <title>Guía Técnica de Vaciado de Concreto Estructural - NICCOGAR RENTAL</title>
+    <style>
+        :root { --primary: #f39c12; --dark: #1e272e; --gray-bg: #f8f9fa; --text: #2f3542; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); line-height: 1.8; margin: 0; padding: 0; background-color: #ffffff; }
+        .header { background-color: var(--dark); padding: 18px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #ffffff; font-weight: 700; font-size: 22px; letter-spacing: 0.5px; }
+        .logo span { color: var(--primary); }
+        .btn-back { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; border: 1px solid var(--primary); padding: 8px 16px; border-radius: 4px; transition: all 0.3s; }
+        .btn-back:hover { background-color: var(--primary); color: var(--dark); }
+        .article-container { max-width: 800px; margin: 50px auto; padding: 0 25px; }
+        .meta-category { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; margin-bottom: 8px; }
+        h1 { font-size: 36px; color: var(--dark); line-height: 1.3; margin-top: 0; font-weight: 800; }
+        .divider { border: 0; border-top: 4px solid var(--primary); width: 70px; margin: 25px 0; border-radius: 2px; }
+        p { font-size: 16px; color: #475569; text-align: justify; }
+        h3 { font-size: 22px; color: var(--dark); margin-top: 35px; border-left: 4px solid var(--dark); padding-left: 12px; }
+        .formula-box { background-color: #2f3542; color: #ffffff; padding: 25px; margin: 30px 0; border-radius: 6px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .formula-box code { font-size: 18px; color: var(--primary); font-family: 'Courier New', Courier, monospace; display: block; margin-bottom: 8px; }
+        .spec-list { padding-left: 20px; }
+        .spec-list li { margin-bottom: 12px; color: #475569; }
+        .spec-list strong { color: var(--dark); }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; color: #2f3542; line-height: 1.6; margin: 0; padding: 0;">
+<body>
 
-    <header style="background-color: #1e272e; padding: 15px 20px;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <div style="color: #ffffff; font-weight: bold; font-size: 20px;"><span style="color: #f39c12;">NICCOGAR RENTAL</span></div>
-            <a href="index.html" style="color: #ffffff; text-decoration: none; font-weight: bold;">← Volver al Inicio</a>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">NICCOGAR RENTAL<span> S.A.C.</span></div>
+            <a href="index.html" class="btn-back">← Volver al Inicio</a>
         </div>
     </header>
 
-    <article style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-        <p style="color: #f39c12; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">Guías Técnicas de Construcción</p>
-        <h1 style="font-size: 32px; color: #1e272e; margin-top: 0;">Guía básica de equipos mecánicos para el vaciado de una vivienda de 2 pisos</h1>
-        <hr style="border: 0; border-top: 3px solid #f39c12; width: 60px; margin: 20px 0;">
+    <main class="article-container">
+        <p class="meta-category">Ingeniería Estructural y Edificaciones</p>
+        <h1>Guía básica de equipos mecánicos para el vaciado de una vivienda de 2 pisos</h1>
+        <hr class="divider">
         
-        <p>El vaciado de losas aligeradas y columnas estructurales requiere un control estricto de los tiempos de fraguado. Para una edificación residencial estándar de dos niveles, la configuración mínima recomendada consta de una mezcladora de concreto tipo trompo de 9-11 p³ (capacidad de 1 saco) y al menos dos vibradores de concreto portátiles a gasolina operando de forma simultánea.</p>
+        <p>El vaciado de elementos estructurales (columnas, vigas y losas aligeradas) en edificaciones residenciales urbanas exige un estricto control del tiempo de colocación para evitar juntas frías. Para una vivienda convencional de dos niveles con un área techada promedio de 120 m² por piso, la selección del equipo mecánico idóneo garantiza la homogeneidad y resistencia del concreto.</p>
         
-        <h3>Control de Calidad del Concreto</h3>
-        <p>El uso del vibrador con aguja de 38mm evita las "cangrejeras" y vacíos de aire perjudiciales en el núcleo de las columnas, asegurando que la mezcla alcance la resistencia de diseño esperada ($f'c = 210 \text{ kg/cm}^2$) especificada en los planos de estructuras.</p>
-    </article>
+        <h3>Configuración Mecánica Mínima Requerida</h3>
+        <p>No se trata solo de mezclar materiales, sino de asegurar el ritmo constante de producción y la correcta eliminación del aire atrapado. Se establece el siguiente equipamiento de línea estándar:</p>
+
+        <ul class="spec-list">
+            <li><strong>Mezcladora de Concreto (Tipo Trompo 9-11 p³):</strong> Equipada con motor a gasolina de 9 HP. Permite una producción óptima de un saco de cemento por tanda, manteniendo un ciclo de mezclado eficiente que no supera los 3 minutos por carga.</li>
+            <li><strong>Vibrador de Concreto Portátil (Eje Flexible de 1.5" a 2"):</strong> Motor independiente de alta velocidad (mínimo 10,000 RPM). La vibración por inmersión es obligatoria para acomodar la masa gruesa de agregados alrededor de las armaduras de fierro corrugado denso.</li>
+        </ul>
+
+        <div class="formula-box">
+            <code>Resistencia de Diseño Requerida: f'c = 210 kg/cm²</code>
+            <span style="font-size: 14px; color: #a4b0be;">Estándar normativo según la Norma Técnica Peruana E.060 de Concreto Armado.</span>
+        </div>
+
+        <h3>Control de Errores Críticos durante el Proceso</h3>
+        <p>Un error común en la autoconstrucción local es el exceso de agua para mejorar la trabajabilidad del concreto. Esto degrada drásticamente la relación agua/cemento. Al emplear vibradores mecánicos de aguja correctos de nuestra flota, se logra fluidificar mezclas de consistencia seca y plástica sin necesidad de adulterar la dosificación técnica, asegurando que la estructura responda correctamente ante eventos sísmicos severos.</p>
+    </main>
 
 </body>
 </html>

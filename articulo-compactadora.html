@@ -3,28 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Alquilar o comprar una compactadora? - NICCOGAR RENTAL</title>
-    <link rel="stylesheet" href="css/estilos.css?v=2">
+    <title>Análisis de Costos: ¿Alquilar o Comprar Compactadora? - NICCOGAR RENTAL</title>
+    <style>
+        :root { --primary: #f39c12; --dark: #1e272e; --gray-bg: #f8f9fa; --text: #2f3542; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); line-height: 1.8; margin: 0; padding: 0; background-color: #ffffff; }
+        .header { background-color: var(--dark); padding: 18px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #ffffff; font-weight: 700; font-size: 22px; letter-spacing: 0.5px; }
+        .logo span { color: var(--primary); }
+        .btn-back { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; border: 1px solid var(--primary); padding: 8px 16px; border-radius: 4px; transition: all 0.3s; }
+        .btn-back:hover { background-color: var(--primary); color: var(--dark); }
+        .article-container { max-width: 800px; margin: 50px auto; padding: 0 25px; }
+        .meta-category { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; margin-bottom: 8px; }
+        h1 { font-size: 36px; color: var(--dark); line-height: 1.3; margin-top: 0; font-weight: 800; }
+        .divider { border: 0; border-top: 4px solid var(--primary); width: 70px; margin: 25px 0; border-radius: 2px; }
+        p { font-size: 16px; color: #475569; text-align: justify; }
+        h3 { font-size: 22px; color: var(--dark); margin-top: 35px; border-left: 4px solid var(--dark); padding-left: 12px; }
+        .tech-box { background-color: var(--gray-bg); border-left: 5px solid var(--primary); padding: 20px; margin: 30px 0; border-radius: 0 6px 6px 0; }
+        .tech-box h4 { margin-top: 0; color: var(--dark); font-size: 16px; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 15px; }
+        .data-table th { background-color: var(--dark); color: white; padding: 12px; text-align: left; }
+        .data-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
+        .data-table tr:nth-child(even) { background-color: var(--gray-bg); }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; color: #2f3542; line-height: 1.6; margin: 0; padding: 0;">
+<body>
 
-    <header style="background-color: #1e272e; padding: 15px 20px;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <div style="color: #ffffff; font-weight: bold; font-size: 20px;"><span style="color: #f39c12;">NICCOGAR RENTAL</span></div>
-            <a href="index.html" style="color: #ffffff; text-decoration: none; font-weight: bold;">← Volver al Inicio</a>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">NICCOGAR RENTAL<span> S.A.C.</span></div>
+            <a href="index.html" class="btn-back">← Volver al Inicio</a>
         </div>
     </header>
 
-    <article style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-        <p style="color: #f39c12; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">Gestión de Activos e Inversión</p>
-        <h1 style="font-size: 32px; color: #1e272e; margin-top: 0;">¿Cuándo conviene alquilar una compactadora en lugar de comprarla?</h1>
-        <hr style="border: 0; border-top: 3px solid #f39c12; width: 60px; margin: 20px 0;">
+    <main class="article-container">
+        <p class="meta-category">Gestión de Activos y Logística de Obra</p>
+        <h1>¿Cuándo conviene alquilar una compactadora en lugar de comprarla?</h1>
+        <hr class="divider">
         
-        <p>Para ingenieros civiles y contratistas en la región de Moquegua, la adquisición de equipos ligeros representa una evaluación de costos críticos operacionales. Comprar un apisonador tipo canguro o una plancha compactadora implica un desembolso de capital inicial fuerte, sumado al costo oculto de almacenamiento y depreciación fiscal de la maquinaria.</p>
+        <p>En el desarrollo de infraestructura vial y cimentaciones en la región de Moquegua, la toma de decisiones financieras respecto al parque de maquinaria ligera es un factor determinante en la utilidad neta del proyecto. Adquirir equipos de compactación (tipo plancha o apisonadores vibratorios) genera un impacto inmediato en el flujo de caja que muchas veces no se justifica técnicamente.</p>
         
-        <h3>Análisis Financiero Corto vs. Mediano Plazo</h3>
-        <p>Si el cronograma de ejecución de calicatas o compactación de subbases de un proyecto dura menos de 8 meses, el costo total de alquiler representa apenas una fracción del valor comercial del equipo, absorbiendo por completo los gastos de sustitución mecánica por fallas y mantenimiento preventivo en obra.</p>
-    </article>
+        <div class="tech-box">
+            <h4>💡 El Criterio de la Tasa de Utilización Operativa</h4>
+            <p style="margin: 0; font-size: 15px;">En ingeniería de proyectos, se establece que si un equipo mecánico posee una proyección de uso menor al <b>65%</b> del tiempo total del cronograma de ejecución, el costo de propiedad (depreciación, mantenimiento preventivo, almacenamiento y transporte) supera al costo de subcontratación o alquiler.</p>
+        </div>
+
+        <h3>Análisis Comparativo de Costos Estructurales</h3>
+        <p>A continuación, se detalla la matriz de evaluación técnica para una obra con un horizonte de ejecución proyectado en 6 meses:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Concepto Técnico / Financiero</th>
+                    <th>Adquisición Propia (Compra)</th>
+                    <th>Servicio de Alquiler (Niccogar)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Inversión Inicial de Capital</strong></td>
+                    <td>Alto (Desembolso de Activo Fijo)</td>
+                    <td>Cero (Gasto Operativo - OPEX)</td>
+                </tr>
+                <tr>
+                    <td><strong>Mantenimiento Crítico y Repuestos</strong></td>
+                    <td>Asumido por el contratista</td>
+                    <td>Incluido con soporte técnico express</td>
+                </tr>
+                <tr>
+                    <td><strong>Depreciación Anual del Activo</strong></td>
+                    <td>Afecta el balance financiero</td>
+                    <td>No aplica al contratista</td>
+                </tr>
+                <tr>
+                    <td><strong>Logística de Almacenamiento</strong></td>
+                    <td>Costo de guardianía/gabinete</td>
+                    <td>Devolución inmediata post-jornada</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Conclusión del Dictamen Técnico</h3>
+        <p>Para constructoras locales, el alquiler de equipos de alta fiabilidad mitiga de forma directa la <i>teoría de errores por paradas de planta</i>. Al transferir el riesgo operacional al proveedor, el residente de obra puede concentrarse estrictamente en el cumplimiento de las metas de compactación de subbases y densidades de campo (ensayos Proctor Modificado) exigidas por la supervisión.</p>
+    </main>
 
 </body>
 </html>

@@ -3,28 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evitar Retrasos Críticos en Obra - NICCOGAR RENTAL</title>
-    <link rel="stylesheet" href="css/estilos.css?v=2">
+    <title>Optimización de Tiempos y Mantenimiento en Obra - NICCOGAR RENTAL</title>
+    <style>
+        :root { --primary: #f39c12; --dark: #1e272e; --gray-bg: #f8f9fa; --text: #2f3542; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); line-height: 1.8; margin: 0; padding: 0; background-color: #ffffff; }
+        .header { background-color: var(--dark); padding: 18px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #ffffff; font-weight: 700; font-size: 22px; letter-spacing: 0.5px; }
+        .logo span { color: var(--primary); }
+        .btn-back { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; border: 1px solid var(--primary); padding: 8px 16px; border-radius: 4px; transition: all 0.3s; }
+        .btn-back:hover { background-color: var(--primary); color: var(--dark); }
+        .article-container { max-width: 800px; margin: 50px auto; padding: 0 25px; }
+        .meta-category { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; margin-bottom: 8px; }
+        h1 { font-size: 36px; color: var(--dark); line-height: 1.3; margin-top: 0; font-weight: 800; }
+        .divider { border: 0; border-top: 4px solid var(--primary); width: 70px; margin: 25px 0; border-radius: 2px; }
+        p { font-size: 16px; color: #475569; text-align: justify; }
+        h3 { font-size: 22px; color: var(--dark); margin-top: 35px; border-left: 4px solid var(--dark); padding-left: 12px; }
+        .step-container { margin: 25px 0; }
+        .step-item { background-color: var(--gray-bg); padding: 18px; border-radius: 6px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .step-title { font-weight: 700; color: var(--dark); margin-bottom: 5px; display: flex; align-items: center; }
+        .step-number { background-color: var(--primary); color: var(--dark); width: 24px; height: 24px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 12px; margin-right: 10px; font-weight: bold; }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; color: #2f3542; line-height: 1.6; margin: 0; padding: 0;">
+<body>
 
-    <header style="background-color: #1e272e; padding: 15px 20px;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-            <div style="color: #ffffff; font-weight: bold; font-size: 20px;"><span style="color: #f39c12;">NICCOGAR RENTAL</span></div>
-            <a href="index.html" style="color: #ffffff; text-decoration: none; font-weight: bold;">← Volver al Inicio</a>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">NICCOGAR RENTAL<span> S.A.C.</span></div>
+            <a href="index.html" class="btn-back">← Volver al Inicio</a>
         </div>
     </header>
 
-    <article style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-        <p style="color: #f39c12; font-weight: bold; text-transform: uppercase; margin-bottom: 5px;">Productividad y Logística</p>
-        <h1 style="font-size: 32px; color: #1e272e; margin-top: 0;">Cómo evitar retrasos críticos en obra por fallas de maquinaria ligera</h1>
-        <hr style="border: 0; border-top: 3px solid #f39c12; width: 60px; margin: 20px 0;">
+    <main class="article-container">
+        <p class="meta-category">Productividad, Seguridad y Control de Tiempos</p>
+        <h1>Cómo evitar retrasos críticos en obra por fallas de maquinaria ligera</h1>
+        <hr class="divider">
         
-        <p>En obras viales e infraestructura, detener una cuadrilla por una falla imprevista en el generador eléctrico o en el martillo demoledor genera pérdidas económicas inmediatas. Un plan de mantenimiento preventivo diario que incluya la revisión de niveles de aceite (4T) y limpieza de filtros de aire es fundamental para extender la vida útil del motor en ambientes de alta polvareda.</p>
+        <p>En la ruta crítica de cualquier proyecto de ingeniería civil, los tiempos muertos causados por desperfectos mecánicos imprevistos en equipos ligeros representan sobrecostos financieros severos. Detener una cuadrilla de obreros porque un rotomartillo o un grupo electrógeno falló a mitad del vaciado destruye los márgenes de ganancia planificados y genera penalidades por retrasos contractuales.</p>
         
-        <h3>Soporte Técnico Express de NICCOGAR</h3>
-        <p>Para mitigar la teoría de errores operacionales, implementamos un protocolo de respuesta inmediata. Si un equipo reporta una falla crítica en campo, nuestro equipo técnico asiste al lugar en menos de dos horas para calibración o sustitución directa del activo mecánico.</p>
-    </article>
+        <h3>El Checklist del Operador: Mantenimiento de Primera Línea</h3>
+        <p>Para mitigar la ocurrencia de fallas operacionales en entornos con alta suspensión de polvo (común en las obras de Moquegua), es indispensable implementar un protocolo diario de inspección obligatoria antes del encendido:</p>
+
+        <div class="step-container">
+            <div class="step-item">
+                <div class="step-title"><span class="step-number">1</span> Monitoreo del Sistema de Lubricación</div>
+                <p style="margin: 0; font-size: 14px; color: #64748b;">Verificación del nivel de aceite de motores de 4 tiempos (SAE 10W-30 o equivalente). Trabajar con niveles bajos bajo temperaturas extremas de campo causa la fundición del pistón en pocas horas.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-title"><span class="step-number">2</span> Inspección del Filtro de Admisión de Aire</div>
+                <p style="margin: 0; font-size: 14px; color: #64748b;">Limpieza en seco del elemento filtrante de esponja y papel. La obstrucción por polvo satura la mezcla de combustión, reduciendo el torque y potencia de las compactadoras de placa.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-title"><span class="step-number">3</span> Inspección de Elementos de Transmisión</div>
+                <p style="margin: 0; font-size: 14px; color: #64748b;">Revisión visual de la tensión de fajas y ajuste de embragues centrífugos para evitar pérdidas de energía cinética hacia los sistemas excéntricos.</p>
+            </div>
+        </div>
+
+        <h3>Protocolo de Soporte Técnico Express NICCOGAR</h3>
+        <p>Entendiendo que los imprevistos existen a pesar de los preventivos, nuestro modelo corporativo reduce el riesgo a su mínima expresión. Si un activo ligero arrendado reporta una anomalía técnica no solucionable mediante ajustes básicos, nuestro equipo de mecánicos especializados asiste directamente a tu frente de obra con un tiempo de respuesta menor a las dos horas para ejecutar calibraciones mecánicas in situ o realizar el reemplazo físico inmediato de la máquina por una de reemplazo de idéntica especificación.</p>
+    </main>
 
 </body>
 </html>
